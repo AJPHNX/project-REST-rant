@@ -13,6 +13,6 @@ app.get('/', (req,res)=>{
 })
 //Default 404
 app.get('*', (req,res)=>{
-    res.status(404).send(`<div><h1>404</h1></br>Sorry Mine. THIS ↴....ain't a sight</div>`)
+    res.render('error404')
 })
 app.listen(process.env.PORT)
