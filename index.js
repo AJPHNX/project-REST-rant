@@ -1,17 +1,22 @@
+// Modules and Globals
 require('dotenv').config()
 const express = require('express')
 const app = express()
 
+// Express Settings
+app.set('views',`${__dirname}/views`)
 app.set('view engine','jsx')
 app.engine('jsx',require('express-react-views').createEngine())
+app.use(express.static('public'))
 
+//Controllers & Routers
 app.use('/places', require('./controllers/places'))
 
-//Index
+//Get Index
 app.get('/', (req,res)=>{
     res.render('home')
 })
-//Places
+//Get Places
 app.get('/places', (req,res)=>{
     let places = [{
         name: 'H-Thai-ML',
@@ -29,7 +34,7 @@ app.get('/places', (req,res)=>{
       
     res.render('places/index',{places})
 })
-//Default 404
+//Get Default 404
 app.get('*', (req,res)=>{
     res.render('error404')
 })
