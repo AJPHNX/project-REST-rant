@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 
 // Express Settings
-app.set('views',`${__dirname}/views`)
+// app.set('views',`${__dirname}/views`)
 app.set('view engine','jsx')
 app.engine('jsx',require('express-react-views').createEngine())
 app.use(express.static('public'))
@@ -23,13 +23,13 @@ app.get('/places', (req,res)=>{
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
+        pic: '/images/Thai.jpeg'
       }, {
         name: 'Coding Cat Cafe',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
+        pic: '/images/CodingCat.jpeg'
       }]
       
     res.render('places/index',{places})
