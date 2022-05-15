@@ -1,5 +1,30 @@
+html, body {
+  min-height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
 h1 {
     text-align: center;
     color: cornflowerblue;
   }
+  .footer{
+    display: flex;
+    flex-direction: row;
+    position:sticky;
+    bottom: 0;
+    height: 50px;
+    background: rgb(173, 173, 185);
+    justify-content: space-evenly;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .footer a{
+    justify-content: space-evenly;
+  }
+  
   

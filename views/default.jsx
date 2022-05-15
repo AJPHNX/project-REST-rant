@@ -9,8 +9,16 @@ function Def (html){
                 <link rel="stylesheet" href="./css/style.css"/>
             </head>
             <body>
-                {html.children}
+                <div className="content">
+                    {html.children}
+                    <footer className="footer">
+                        <a href='https://ajphnx.github.io/Resume/'>Resume</a>
+                        <a href='http://ajphnx.com/'>Portfolio</a>
+                        <a href='https://www.linkedin.com/in/aj-phoenix/'>LinkedIn</a>
+                    </footer>
+                </div>
             </body>
+            
         </html>
     )
 }
