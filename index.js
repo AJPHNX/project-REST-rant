@@ -1,6 +1,7 @@
 // Modules and Globals
 require('dotenv').config()
 const express = require('express')
+const places = require('./models/places.js')
 // const methodOverride = require('method-override')
 const app = express()
 
@@ -22,20 +23,6 @@ app.get('/', (req,res)=>{
 })
 //Get Places
 app.get('/places', (req,res)=>{
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: '/images/Thai.jpeg'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: '/images/CodingCat.jpeg'
-      }]
-      
     res.render('places/index',{places})
 })
 //Get Default 404
