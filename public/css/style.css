@@ -4,6 +4,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 main{
   margin-right: 20px;
