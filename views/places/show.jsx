@@ -11,21 +11,26 @@ function show (data,id){
     return (
         <Def>
           <main>
-            <div className = "card" >
+            <div className = "col-sm-6" >
               {/* style={{"width: 18rem"}}> */}
               <h1>
                     {data.place.name}
                 </h1>
-                <img src={data.place.pic} className="card-img-top" alt={data.place.name}></img>
+                <img src={data.place.pic} width ="400px" className="card-img-top" alt={data.place.name}></img>
                 <h2>Rating:</h2>
                 <p className = "text-center card-body">
                   <h3>Description:</h3>
                     Located in {data.place.city},{data.place.state}  
                     Serving {data.place.cuisines}
                 </p>
-                <a href={`/places/${placeId}/edit`} className="btn btn-warning"> 
+                {/* <a href={`/places/${placeId}/edit`} className="btn btn-warning"> 
                   Edit
-                </a>  
+                </a>   */}
+                <form method = "POST" action = {`/places/${placeId}/edit?_method=GET`}> 
+                  <button type="submit" className="btn btn-warning" >
+                    Edit
+                  </button>
+                </form> 
                 <form method = "POST" action = {`/places/${placeId}?_method=DELETE`}> 
                   <button type="submit" className="btn btn-danger" >
                     Delete
