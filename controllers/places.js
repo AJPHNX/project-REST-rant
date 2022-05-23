@@ -27,16 +27,35 @@ router.post('/',(req,res)=>{
 router.get('/new',(req,res)=>{ 
     res.render('places/new')
 })
-//Get Places Id
+//Get Show Place by Id
 router.get('/:id',(req,res)=>{
   let id = Number(req.params.id)
   if (isNaN(id)) {
     res.render('error404')
   }else if(!places[id]){
     res.render('error404')
+  }else{
+    res.render('places/show',{place: places[id],id : id})
+    // console.log(places[id])
+    // console.log(id)
   }
-  else{
-    res.render('places/show',{place: places[id]})
+})
+//Delete Route
+router.delete('/:id',(req,res)=>{
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+    // console.log(`splicing: ${id}`)
+  }else if(!places[id]){
+    res.render('error404')
+  }else{
+    console.log(id)
+    places.splice(id,1)
+    
+    // res.send('STUB DELETE places/:id')
+    res.redirect('/places')
+    // res.redirect
+    // console.log(id)
   }
 })
 
