@@ -14,16 +14,23 @@ router.get('/', (req, res) => {
 //Get Places Index
 router.post('/',(req,res)=>{ 
   
-    if (!req.body.pic) {req.body.pic = 'http://placekitten.com/400/400'}
-    if (!req.body.city) {req.body.city = 'Anytown'}
-    if (!req.body.state) {req.body.state = 'USA'}
+    // if (!req.body.pic) {req.body.pic = 'http://placekitten.com/400/400'}
+    // if (!req.body.city) {req.body.city = 'Anytown'}
+    // if (!req.body.state) {req.body.state = 'USA'}
     db.Place.create(req.body)
       .then(() =>{
         res.redirect('/places')
       })
       .catch(err => {
-        console.log('err',err) 
-        res.render('error404')
+        if (err && err.name == 'ValidationError'){
+          let message = 'Validation Error:'
+          //TODO: Generate error message(s)
+          res.render('places/new',{message})
+        }
+        else{
+          console.log('err',err) 
+          res.render('error404')
+        }
       })   
 })
 
