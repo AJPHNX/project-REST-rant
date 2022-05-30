@@ -14,17 +14,17 @@ function edit_form (data,id) {
                                 className ="form-control" 
                                 id ="name" 
                                 name="name" 
-                                value = {data.place.name}
+                                defaultValue = {data.place.name}
                                 required/>
                             </div>
                         <div className ="form-group col-sm-6">
                             <label htmlFor ="pic">Place Picture</label>
                             <input 
                                 className ="form-control"  
-                                type = "text" 
+                                type = "text" //Change to url
                                 id ="pic" 
                                 name="pic" 
-                                value = {data.place.pic}
+                                defaultValue = {data.place.pic}
                                 />
                         </div>
                         <div className ="form-group col-sm-6">
@@ -33,7 +33,7 @@ function edit_form (data,id) {
                                 className ="form-control"  
                                 id ="city" 
                                 name="city" 
-                                value = {data.place.city}/>
+                                defaultValue = {data.place.city}/>
                         </div>
                         <div className ="form-group col-sm-6">
                             <label htmlFor ="state">Place State</label>
@@ -41,7 +41,7 @@ function edit_form (data,id) {
                                 className ="form-control"  
                                 id ="state" 
                                 name="state" 
-                                value = {data.place.state}
+                                defaultValue = {data.place.state}
                                 />
                         </div>
                     </div>
@@ -51,10 +51,13 @@ function edit_form (data,id) {
                             className ="form-control" 
                             id ="cuisine" 
                             name="cuisine" 
-                            value = {data.place.cuisines}
+                            defaultValue = {data.place.cuisines}
                             required/>
                     </div>
-                    <input className ="btn btn-primary" type = "submit" value = "Add Places"/>
+                    <input 
+                        className ="btn btn-primary" 
+                        type = "submit" 
+                        value = "Edit Places"/>
                 </form>
             </main>
         </Def>

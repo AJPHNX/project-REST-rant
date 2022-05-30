@@ -4,30 +4,61 @@ const Def = require('../default')
 function new_form(){
     return(
         <Def>
-            <main>
+            <main className="col text-center">
                 <h1>Add a New Place</h1>
                 <form  method="POST" action="/places">
-                    <div className ="form-goup">
+                <div className="row ">
+                    <div className ="form-goup col-sm-6">
                         <label htmlFor ="name">Place Name</label>
-                        <input className ="form-control" id ="name" name="name" required/>
+                        <input 
+                            className ="form-control" 
+                            id ="name" 
+                            name="name" 
+                            required/>
                     </div>
-                    <div className ="form-goup">
+                    <div className ="form-goup col-sm-6">
                         <label htmlFor ="pic">Place Picture</label>
-                        <input className ="form-control"  type = "url" id ="pic" name="pic" />
+                        <input 
+                            className ="form-control"  
+                            type = "url" 
+                            id ="pic" 
+                            name="pic" />
                     </div>
-                    <div className ="form-goup">
+                    <div className ="form-goup col-sm-6">
                         <label htmlFor ="city">Place City</label>
-                        <input className ="form-control"  id ="city" name="city" />
+                        <input 
+                            className ="form-control"  
+                            id ="city" 
+                            name="city" />
                     </div>
-                    <div className ="form-goup">
+                    <div className ="form-goup col-sm-6">
                         <label htmlFor ="state">Place State</label>
-                        <input className ="form-control"  id ="state" name="state" />
+                        <input 
+                            className ="form-control"  
+                            id ="state" 
+                            name="state" />
                     </div>
+                </div>
                     <div className ="form-goup">
                         <label htmlFor ="cuisine">Place Cuisine</label>
-                        <input className ="form-control" id ="cuisine" name="cuisine" required/>
+                        <input 
+                            className ="form-control" 
+                            id ="cuisine" 
+                            name="cuisine" 
+                            required/>
                     </div>
-                    <input className ="btn btn-primary" type = "submit" value = "Add Places"/>
+                    <div className="form-group">
+                        <label for="founded">Founded Year</label>
+                        <input 
+                            className="form-control" 
+                            id="founded" 
+                            name="founded" />
+                    </div>
+
+                    <input 
+                        className ="btn btn-primary" 
+                        type = "submit" 
+                        value = "Add Places"/>
                 </form>
             </main>
         </Def>
