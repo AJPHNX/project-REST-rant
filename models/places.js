@@ -17,9 +17,9 @@
 const mongoose = require('mongoose')
 
 const placeSchema = new mongoose.Schema({
-  _id: {type: mongoose.Schema.Types.ObjectId}, //required: true},
+  // _id: {type: mongoose.Schema.Types.ObjectId}, //required: true},
   name: { type: String, required: true, default:'undefined name'},
-  pic: {type:String,default:'http://placekitten.com/350/350'},
+  pic: {type:String, default:'http://placekitten.com/350/350'},
   cuisines: { type: String, required: true, default:'undefined Food'},
   city: { type: String, default: 'Anytown' },
   state: { type: String, default: 'USA' },

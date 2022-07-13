@@ -42,8 +42,8 @@ function show (data,id){
                 <h2>Rating:</h2>
                 <p className = "text-center card-body">
                   <h2>Description:</h2>
-                  <p>{data.place.showEstablished()}</p>
-                     
+                  <h3>{data.place.showEstablished()}</h3>
+                  <h4>Serving {data.place.cuisines}</h4>   
                   {/* <h4>Serving {data.place.cuisines}</h4>     */}
                 </p>
                 {/* <a href={`/places/${placeId}/edit`} className="btn btn-warning"> 
