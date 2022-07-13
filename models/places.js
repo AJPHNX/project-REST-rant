@@ -13,9 +13,11 @@
 //   }]
 
 //   module.exports = places
+
 const mongoose = require('mongoose')
 
 const placeSchema = new mongoose.Schema({
+  _id: {type: mongoose.Schema.Types.ObjectId}, //required: true},
   name: { type: String, required: true, default:'undefined name'},
   pic: {type:String,default:'http://placekitten.com/350/350'},
   cuisines: { type: String, required: true, default:'undefined Food'},
@@ -23,9 +25,10 @@ const placeSchema = new mongoose.Schema({
   state: { type: String, default: 'USA' },
   founded: {
     type: Number,
-    min:[1673,'Lets rethink this. When?'],
+    min: [1673,'Lets rethink this. When?'],
     max: [new Date().getFullYear(),'We must first be present to explore the future.']
-  }
+  },
+  comments:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 })
 
 placeSchema.methods.showEstablished = function() {

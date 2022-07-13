@@ -1,6 +1,7 @@
 const React = require('react')
 const Def = require('../default')
 
+
 function new_form(data){
     let message = ''
     if (data.message){
