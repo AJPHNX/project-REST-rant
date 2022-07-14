@@ -1,10 +1,10 @@
 const React = require('react')
-const Def = require('../default.jsx')
+const Def = require('../default')
 
-function edit_form (data,id) {
+function edit_form (data) {
     return (
         <Def>
-        <main className="col text-center">
+        <main >{/* className="col text-center"> */}
           <h1>Edit Place</h1>
                 <form  method="POST" action={`/places/${data.place.id}?_method=PUT`}>
                    <div className="row ">

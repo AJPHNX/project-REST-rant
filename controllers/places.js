@@ -25,6 +25,11 @@ router.post('/',(req,res)=>{
         if (err && err.name == 'ValidationError'){
           let message = 'Validation Error:'
           //TODO: Generate error message(s)
+          for (var field in err.errors) {
+              message += `${field} was ${err.errors[field].value}. `
+              message += `${err.errors[field].message}`
+          }
+          console.log('Validation error message', message)
           res.render('places/new',{message})
         }
         else{
@@ -69,7 +74,6 @@ router.get('/:id', (req, res) => {
   db.Place.findOne({ _id: req.params.id })
   .populate('comments')
   .then(place => {
-      // console.log(place.comments)
       res.render('places/show', { place })
   })
   .catch(err => {

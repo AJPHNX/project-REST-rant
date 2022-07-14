@@ -1,8 +1,8 @@
 const React = require('react')
 const Def = require('../default')
-const showWidth =  '400px'
+const showWidth =  '300px'
 
-function show (data,id){
+function Show (data,id){
 
   let comments =(
     <h3 className = "inactive">
@@ -10,10 +10,23 @@ function show (data,id){
     </h3>
   )
   console.log(data.place)
-  let placeId = Number(data.id)
+  // let placeId = Number(data.id)
   console.log(`Place Id`)
-  console.log(placeId)
+  console.log(data.place.id)
   if (data.place.comments.length){
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+        return tot + c.stars
+      }, 0)
+      let averageRating = Math.round(sumRatings / data.place.comments.length)
+      let stars = ''
+      for (let i = 0; i < averageRating; i++) {
+        stars += '⭐️'
+      }
+      rating = (
+        <h3>
+          {stars} stars
+        </h3>
+      )
     comments = data.place.comments.map(c =>{
       return(
         <div className ="border">
@@ -69,4 +82,4 @@ function show (data,id){
     )
 }
 
-module.exports = show
+module.exports = Show

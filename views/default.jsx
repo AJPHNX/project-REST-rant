@@ -20,8 +20,8 @@ function Def (html){
                     </nav>
                     {html.children}
                     <footer className="footer">
-                        <a href='https://ajphnx.github.io/Resume/'>Resume</a>
-                        <a href='http://ajphnx.com/'>Portfolio</a>
+                        <a href='https://ajphnx.github.io/Resume/'>Resume</a>  |  
+                        <a href='http://ajphnx.com/'>Portfolio</a>  |  
                         <a href='https://www.linkedin.com/in/aj-phoenix/'>LinkedIn</a>
                     </footer>
                 </div>
